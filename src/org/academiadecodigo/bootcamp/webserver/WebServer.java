@@ -138,6 +138,7 @@ public class WebServer {
     public static void readRequest(ServerSocket serverSocket) {
 
         // Accept new client connection
+
         try {
 
             logger.info("Reading Request..." + "\n");
