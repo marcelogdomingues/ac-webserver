@@ -1,0 +1,54 @@
+Oct 28, 2020 6:05:32 PM org.academiadecodigo.bootcamp.webserver.WebServer logFile
+INFO: Error Log : 20201028_180532
+
+Oct 28, 2020 6:05:32 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
+INFO: Setting Up The Server...
+
+Oct 28, 2020 6:05:32 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
+INFO: Server Started and listening to the port 8080
+
+Oct 28, 2020 6:05:32 PM org.academiadecodigo.bootcamp.webserver.WebServer readRequest
+INFO: Reading Request...
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendRequest
+INFO: Sending Request...
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendRequest
+INFO: GET / HTTP/1.1
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer doResponse
+INFO: Performing Response ...
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer getPath
+INFO: Getting Path [ src/org/academiadecodigo/bootcamp/webserver/resources/index.html ]
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendResponse
+INFO: java.io.PrintWriter@17f052a3
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer getPath
+INFO: Getting Path [ src/org/academiadecodigo/bootcamp/webserver/resources/index.html ]
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendResponse
+INFO: Finished writing content to output
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer readRequest
+INFO: Reading Request...
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendRequest
+INFO: Sending Request...
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendRequest
+INFO: GET /favicon.ico HTTP/1.1
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer doResponse
+INFO: Performing Response ...
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer getPath
+INFO: Getting Path [ src/org/academiadecodigo/bootcamp/webserver/resources/index.html ]
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendResponse
+INFO: java.io.PrintWriter@1a86f2f1
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer getPath
+INFO: Getting Path [ src/org/academiadecodigo/bootcamp/webserver/resources/index.html ]
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer sendResponse
+INFO: Finished writing content to output
+
+Oct 28, 2020 6:05:34 PM org.academiadecodigo.bootcamp.webserver.WebServer readRequest
+INFO: Reading Request...
+

@@ -6,6 +6,8 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -27,6 +29,7 @@ public class WebServer {
     private static PrintWriter output;
 
     public static File getFile() {
+        logger.info("Getting File [ " + file + " ]" + "\n");
         return file;
     }
 
@@ -35,6 +38,7 @@ public class WebServer {
     }
 
     public static String getPath() {
+        logger.info("Getting Path [ " + path + " ]" + "\n");
         return path;
     }
 
@@ -46,15 +50,31 @@ public class WebServer {
 
         try {
 
-            logger.info("Sending Request...");
+            logger.info("Sending Request..." + "\n");
 
             String getRequest = request.readLine();
+
+            String[] reqArray = getRequest.split(" ");
+
+            for(int i = 0; i < reqArray.length; i++){
+
+                System.out.println(reqArray[i]);
+            }
+
+
+            String filePath = reqArray[1].substring(1);
+
+            if(filePath == null){
+
+                logger.severe("ERROR! FILEPATH NULL");
+
+            }
 
             logger.info(getRequest);
 
         } catch (Exception e) {
 
-            logger.warning("Error in Send Request: " + e.getMessage());
+            logger.severe("Error in Send Request: " + e.getMessage());
 
         }
 
@@ -85,7 +105,7 @@ public class WebServer {
             if (!file.exists()) {
 
                 output.write("HTTP/1.1 404 Not Found\r\n" + "Content-Type: text/html" + "\r\n\r\n");
-                logger.info("File does not exist.  Client requesting file at : " + getPath());
+                logger.warning("File does not exist.  Client requesting file at : " + getPath() + "\n");
                 output.close();
 
             } else {
@@ -96,7 +116,7 @@ public class WebServer {
                 String fileString = new String(fileBytes, StandardCharsets.UTF_8);
                 output.write(fileString);
 
-                logger.info("Finished writing content to output");
+                logger.info("Finished writing content to output" + "\n");
 
                 output.close();
 
@@ -104,7 +124,7 @@ public class WebServer {
 
         } catch (Exception e) {
 
-            logger.warning("Error in Send Response: " + e.getMessage());
+            logger.severe("Error in Send Response: " + e.getMessage() + "\n");
 
         }
 
@@ -120,7 +140,7 @@ public class WebServer {
         // Accept new client connection
         try {
 
-            logger.info("Reading Request...");
+            logger.info("Reading Request..." + "\n");
 
             clientSocket = serverSocket.accept();
 
@@ -131,7 +151,7 @@ public class WebServer {
 
         } catch (Exception e) {
 
-            logger.warning("Error in Read Request: " + e.getMessage());
+            logger.warning("Error in Read Request: " + e.getMessage() + "\n");
 
         }
 
@@ -142,24 +162,28 @@ public class WebServer {
 
         try {
 
-            logger.info("Setting Up The Server...");
+            logger.info("Setting Up The Server..." + "\n");
 
             int port = 8080;
 
             serverSocket = new ServerSocket(port);
 
-            logger.info("Server Started and listening to the port " + port);
+            logger.info("Server Started and listening to the port " + port + "\n");
 
-            readRequest(serverSocket);
+            while (true) {
 
-            sendRequest(getRequest());
+                readRequest(serverSocket);
 
-            sendResponse();
+                sendRequest(getRequest());
+
+                sendResponse();
+
+            }
 
         } catch (Exception e) {
 
             logger.warning(e.getMessage());
-            System.out.println("Error in Setup Server: " + e.getMessage());
+            System.out.println("Error in Setup Server: " + e.getMessage() + "\n");
 
         }
 
@@ -169,12 +193,15 @@ public class WebServer {
 
         try {
 
-            fileHandler = new FileHandler("/Users/codecadet/IdeaProjects/ac-webserver/src/org/academiadecodigo/bootcamp/webserver/errorlogs/ErrorLog.txt");
+            //Current Date and Time
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+
+            fileHandler = new FileHandler("/Users/codecadet/IdeaProjects/ac-webserver/src/org/academiadecodigo/bootcamp/webserver/errorlogs/ErrorLog_" + timeStamp + ".txt");
             logger.addHandler(fileHandler);
             SimpleFormatter formatter = new SimpleFormatter();
             fileHandler.setFormatter(formatter);
 
-            logger.info("Error Log");
+            logger.info("Error Log : " + timeStamp + "\n");
 
 
         } catch (IOException e) {
@@ -187,7 +214,7 @@ public class WebServer {
 
     public static void start() {
 
-            setupServer();
+        setupServer();
 
     }
 
