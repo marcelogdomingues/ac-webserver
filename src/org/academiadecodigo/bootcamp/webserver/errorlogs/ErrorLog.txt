@@ -1,6 +1,18 @@
-Oct 28, 2020 4:12:01 PM org.academiadecodigo.bootcamp.webserver.WebServer logFile
+Oct 28, 2020 5:25:57 PM org.academiadecodigo.bootcamp.webserver.WebServer logFile
 INFO: Error Log
-Oct 28, 2020 4:12:01 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
-INFO: Setup Server
-Oct 28, 2020 4:12:01 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
+Oct 28, 2020 5:25:57 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
+INFO: Setting Up The Server...
+Oct 28, 2020 5:25:57 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
 INFO: Server Started and listening to the port 8080
+Oct 28, 2020 5:25:57 PM org.academiadecodigo.bootcamp.webserver.WebServer readRequest
+INFO: Reading Request...
+Oct 28, 2020 5:26:05 PM org.academiadecodigo.bootcamp.webserver.WebServer sendRequest
+INFO: Sending Request...
+Oct 28, 2020 5:26:05 PM org.academiadecodigo.bootcamp.webserver.WebServer sendRequest
+INFO: GET /oal/ HTTP/1.1
+Oct 28, 2020 5:26:05 PM org.academiadecodigo.bootcamp.webserver.WebServer doResponse
+INFO: Performing Response ...
+Oct 28, 2020 5:26:05 PM org.academiadecodigo.bootcamp.webserver.WebServer sendResponse
+INFO: java.io.PrintWriter@3f91beef
+Oct 28, 2020 5:26:05 PM org.academiadecodigo.bootcamp.webserver.WebServer sendResponse
+INFO: Finished writing content to output
