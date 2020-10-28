@@ -1,0 +1,6 @@
+Oct 28, 2020 4:12:01 PM org.academiadecodigo.bootcamp.webserver.WebServer logFile
+INFO: Error Log
+Oct 28, 2020 4:12:01 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
+INFO: Setup Server
+Oct 28, 2020 4:12:01 PM org.academiadecodigo.bootcamp.webserver.WebServer setupServer
+INFO: Server Started and listening to the port 8080
